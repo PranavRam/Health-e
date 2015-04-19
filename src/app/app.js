@@ -130,8 +130,23 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
             }
         })
         .state('index.related', {
-            url: "/minor",
+            url: "/forums",
+            abstract: true,
             templateUrl: "app/minor/minor.html",
+            data: { pageTitle: 'Example view' }
+        })
+        .state('index.related.forum', {
+            // parent: 'index.related',
+            url: "/:type",
+            templateUrl: "app/minor/forum_detail.html",
+            data: { pageTitle: 'Type 1 Diabetes' },
+            controller: function($rootScope, $state){
+                $rootScope.$state = $state;
+            }
+        })
+        .state('index.related.forums', {
+            url: "",
+            templateUrl: "app/minor/minor2.html",
             data: { pageTitle: 'Example view' }
         })
         .state('index.providers', {

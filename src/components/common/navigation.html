@@ -26,8 +26,8 @@
             <li ui-sref-active="active">
                 <a ui-sref="index.main"><i class="fa fa-laptop"></i> <span class="nav-label">Main</span> </a>
             </li>
-            <li ui-sref-active="active">
-                <a ui-sref="index.related"><i class="fa fa-users"></i> <span class="nav-label">Related People</span></a>
+            <li ng-class="{active: $state.includes('index.related')}">
+                <a ui-sref="index.related.forums"><i class="fa fa-users"></i> <span class="nav-label">Related People</span></a>
             </li>
             <li ui-sref-active="active">
                 <a ui-sref="index.providers"><i class="fa fa-user-md"></i> <span class="nav-label">Providers</span></a>
