@@ -1,0 +1,248 @@
+<div class="row wrapper">
+    <div>
+        <!-- <span><h2>Welcome Pranav</h2> How are you feeling today?</span> -->
+        <h3>Welcome, Pranav</h3>
+        <div
+            isteven-multi-select
+            input-model="modernBrowsers"
+            output-model="outputBrowsers"
+            button-label="name"
+            item-label="name"
+            tick-property="ticked"
+        >
+        </div>
+            
+    </div>    
+</div>
+<div class="row">
+    <div class="wrapper-content">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6" ng-repeat="reading in humanAPIReadings">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>{{reading.title}}</h5>
+                            <div ibox-tools></div>
+                        </div>
+                        <div class="ibox-content">
+                            <div>
+
+                                <div class="pull-right text-right">
+                                    <bar-chart data="reading.data" options="reading.options"></bar-chart>
+                                    <br/>
+                                    <small class="font-bold">{{reading.data[0]}} {{reading.unit}}</small>
+                                </div>
+                                <h4>Latest: {{reading.latest | date:'yyyy-MM-dd'}}
+                                    <br/>
+                                    <small class="m-r"><a ui-sref="flot_chart"> View More</a></small>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- </div> -->
+            <!-- <div class="row" ng-repeat="observationChunk in observationChunks"> -->
+                <div class="col-md-6 observation-card" ng-repeat="observation in observations">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>{{observation.title}}</h5> <!-- <span class="label label-primary">W</span> -->
+                            <div ibox-tools>
+                                <div class="ibox-tools">
+                                    <a ng-click="toggleInputFor(observation)"> <i class="fa" ng-class="observation.showInput ? 'fa-chevron-up' : 'fa-chevron-down'"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div>
+
+                                <div class="pull-right text-right">
+                                    <bar-chart data="observation.chart.data" options="observation.chart.options"></bar-chart>
+                                    <br/>
+                                    <small class="font-bold">{{observation.values[0].content.valueQuantity.value}} {{observation.values[0].content.valueQuantity.units}}</small>
+                                </div>
+                                <h4>Latest: {{observation.values[0].content.appliesDateTime | date :'shortDate'}}
+                                    <br/>
+                                    <small class="m-r"><a ui-sref="flot_chart"> View More</a></small>
+                                </h4>
+                            </div>
+                            <div ng-show="observation.showInput">
+                                <hr>
+                                <form class="form-horizontal">
+                                    <p>Enter your data for {{observation.title}}</p>
+
+                                    <div class="form-group"><label class="col-md-2 control-label">Value</label>
+
+                                        <div class="col-md-10"><input placeholder="Value" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group"><label class="col-md-2 control-label">Units</label>
+
+                                        <div class="col-md-10"><input placeholder="Units" class="form-control"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input type="datetime" class="form-control" date-time ng-model="sampleDate" view="date">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="pull-right submit">
+                                            <button class="btn btn btn-primary btn-sm" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="rowmd
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Default Panel
+                        </div>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
+                                fringilla augue.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Default Panel
+                        </div>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
+                                fringilla augue.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="col-md-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Your Care Plan</h5>
+                    <div ibox-tools></div>
+                </div>
+                <div class="ibox-content ibox-heading profile-small">
+                    <img alt="image" class="img-circle" tooltip-placement="left" tooltip="Dr Doom" src="assets/images/profile_small.jpg">
+                    <img alt="image" class="img-circle" tooltip-placement="top" tooltip="Dr Oc" src="assets/images/a2.jpg">
+                    <img alt="image" class="img-circle" tooltip-placement="right" tooltip="Dr Dolittle" src="assets/images/a1.jpg">
+                </div>
+                <div class="ibox-content inspinia-timeline">
+
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-xs-3 date">
+                                <i class="fa fa-briefcase"></i>
+                                6:00 am
+                                <br/>
+                                <small class="text-navy">2 hour ago</small>
+                            </div>
+                            <div class="col-xs-7 content no-top-border">
+                                <p class="m-b-xs">Complete a screening test for diabetic retinopathy in the last 12 months</p>
+
+                                <p>Complete a cholestrol test in the last 12 months</p>
+
+                                <p><line-chart data="main.LineChart.data" options="main.LineChart.options"></line-chart></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-xs-3 date">
+                                <i class="fa fa-file-text"></i>
+                                7:00 am
+                                <br/>
+                                <small class="text-navy">3 hour ago</small>
+                            </div>
+                            <div class="col-xs-7 content">
+                                <p class="m-b-xs">Complete one health care provider visit in the last 12 months</p>
+
+                                <!-- <ul>
+                                    <li>45 to 50 grams carbs per meal</li>
+                                </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-xs-3 date">
+                                <i class="fa fa-coffee"></i>
+                                8:00 am
+                                <br/>
+                            </div>
+                            <div class="col-xs-7 content">
+                                <p class="m-b-xs">Complete a pneumococcal vaccination</p>
+
+                                <!-- <p>
+                                    Go to shop and find some products.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-xs-3 date">
+                                <i class="fa fa-phone"></i>
+                                11:00 am
+                                <br/>
+                                <small class="text-navy">21 hour ago</small>
+                            </div>
+                            <div class="col-xs-7 content">
+                                <p class="m-b-xs">Complete a hbA1c test in the last 6 months</p>
+
+                                <!-- <p>
+                                    Lorem Ipsum has been the industry's standard dummy text ever since.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-xs-3 date">
+                                <i class="fa fa-user-md"></i>
+                                09:00 pm
+                                <br/>
+                                <small>21 hour ago</small>
+                            </div>
+                            <div class="col-xs-7 content">
+                                <p class="m-b-xs">Record blood glucose</p>
+
+                                <!-- <p>
+                                    Find some issue and go to doctor.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-xs-3 date">
+                                <i class="fa fa-comments"></i>
+                                12:50 pm
+                                <br/>
+                                <small class="text-navy">48 hour ago</small>
+                            </div>
+                            <div class="col-xs-7 content">
+                                <p class="m-b-xs">Record any warning signs</p>
+
+                                <!-- <p>
+                                    Web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

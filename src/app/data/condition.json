@@ -1,0 +1,87 @@
+{
+  "resourceType": "Bundle",
+  "id": "e3fef784-7be6-4baf-a99c-2b01333ed89e",
+  "published": "2015-03-03T21:30:28.665-05:00",
+  "link": [
+    {
+      "rel": "self",
+      "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/Condition?subject:Patient=3.000050471-01&_format=json&_count=1000"
+    },
+    {
+      "rel": "fhir-base",
+      "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir"
+    }
+  ],
+  "totalResults": "2",
+  "author": [
+    {
+      "name": "I3L ExactData and HealthVault FHIR Server"
+    }
+  ],
+  "entry": [
+    {
+      "title": "Condition 3.26",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/Condition/3.26",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/Condition/3.26"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<table><tr><td>Problem</td><td>Onset Date</td><td>ICD-9</td></tr><tr><td>Type 1 Diabetes</td><td>Tue Jun 04 00:00:00 EDT 1985</td><td>250.01</td></tr></table>"
+        },
+        "subject": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-9",
+              "code": "250.01",
+              "display": "Type 1 Diabetes"
+            }
+          ]
+        },
+        "status": "confirmed",
+        "onsetDate": "1985-06-04T00:00:00"
+      }
+    },
+    {
+      "title": "Condition 3.27",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/Condition/3.27",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/Condition/3.27"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<table><tr><td>Problem</td><td>Onset Date</td><td>ICD-9</td></tr><tr><td>Chronic Renal Failure</td><td>Wed Jul 26 00:00:00 EDT 1972</td><td>585.9</td></tr></table>"
+        },
+        "subject": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-9",
+              "code": "585.9",
+              "display": "Chronic Renal Failure"
+            }
+          ]
+        },
+        "status": "confirmed",
+        "onsetDate": "1972-07-26T00:00:00"
+      }
+    }
+  ]
+}

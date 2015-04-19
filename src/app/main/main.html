@@ -1,0 +1,71 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- <div class="text-center m-t-lg">
+                <h1>
+                    {{main.helloText}}
+                </h1>
+                <small>
+                    {{main.descriptionText}}
+
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </small>
+            </div> -->
+                <!-- <div class="panel-heading">
+                    Default Panel
+                </div> -->
+                    <div class="ui-tab">
+
+                        <!-- <div class="panel-heading">
+                            <div class="panel-title m-b-md"><h4>Blank Panel with text tabs</h4></div>
+                        </div> -->
+
+                        <div class="panel-body">
+                            <tabset>
+                                <tab heading="Overview">
+                                    <div ng-include="'components/overview/overview.html'" ng-controller="MainCtrl as main"></div>
+                                </tab>
+                                <tab heading="Activities" ng-controller="ActivityCtrl as ac">
+                                    <angularchart
+                                        dataset="dataset"
+                                        schema="schema"
+                                        options="options">
+                                      </angularchart>
+
+                                    <angularchart
+                                        dataset="datasetActivities"
+                                        options="activitiesOptions">
+                                      </angularchart>
+
+                                    <angularchart
+                                        dataset="activitySummaries"
+                                        schema="schemaSummaries"
+                                        options="optionsSummaries">
+                                      </angularchart>
+                                </tab>
+                                <tab heading="Sleep" ng-controller="SleepCtrl as sc">
+                                    <angularchart
+                                        dataset="sleeps"
+                                        schema="schema"
+                                        options="options">
+                                      </angularchart>
+                                      <angularchart
+                                        dataset="sleeps"
+                                        schema="schema"
+                                        options="optionsSections">
+                                      </angularchart>
+                                      <angularchart
+                                        dataset="sleepsSummaries"
+                                        schema="schemaSummaries"
+                                        options="optionsSummaries">
+                                      </angularchart>
+                                </tab>
+                            </tabset>
+
+                        </div>
+
+                    </div>
+
+        </div>
+    </div>
+</div>

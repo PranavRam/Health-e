@@ -1,0 +1,628 @@
+{
+  "resourceType": "Bundle",
+  "id": "91936bcf-aa70-4561-a34d-1ba6cb5d66f4",
+  "published": "2015-03-03T21:30:28.675-05:00",
+  "link": [
+    {
+      "rel": "self",
+      "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription?subject:Patient=3.000050471-01&_format=json&_count=1000"
+    },
+    {
+      "rel": "fhir-base",
+      "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir"
+    }
+  ],
+  "totalResults": "11",
+  "author": [
+    {
+      "name": "I3L ExactData and HealthVault FHIR Server"
+    }
+  ],
+  "entry": [
+    {
+      "title": "MedicationPrescription 3.104",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.104",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.104"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2006-07-24T19:30:00-04:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.114",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.114",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.114"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "0002-8315-01"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2007-03-08T17:15:00-05:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Jarrod V Hyde, PA-C"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Insulin Nph"
+        },
+        "dosageInstruction": [
+          {
+            "text": "80 UNITS SC AC",
+            "doseQuantity": {
+              "value": 80.0,
+              "units": "1"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 60.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.115",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.115",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.115"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2007-06-04T16:30:00-04:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.123",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.123",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.123"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2008-10-20T19:45:00-04:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.130",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.130",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.130"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2009-04-27T15:00:00-04:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.139",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.139",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.139"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2010-03-15T20:15:00-04:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.145",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.145",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.145"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2011-12-19T19:30:00-05:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.152",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.152",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.152"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2012-06-06T16:30:00-04:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.162",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.162",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.162"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2013-01-14T21:00:00-05:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.170",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.170",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.170"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2014-11-26T14:45:00-05:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    },
+    {
+      "title": "MedicationPrescription 3.90",
+      "id": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.90",
+      "link": [
+        {
+          "rel": "self",
+          "href": "https://taurus.i3l.gatech.edu:8443/HealthPort/fhir/MedicationPrescription/3.90"
+        }
+      ],
+      "published": "2015-03-03T21:30:28-05:00",
+      "content": {
+        "resourceType": "MedicationPrescription",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.69",
+                  "code": "67544-134-30"
+                }
+              ]
+            }
+          }
+        ],
+        "dateWritten": "2005-11-21T17:45:00-05:00",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/3.000050471-01"
+        },
+        "prescriber": {
+          "display": "Breanna J Ellison, NP"
+        },
+        "medication": {
+          "reference": "#1",
+          "display": "Lisinopril"
+        },
+        "dosageInstruction": [
+          {
+            "text": "daily",
+            "doseQuantity": {
+              "value": 20.0,
+              "units": "mg"
+            }
+          }
+        ],
+        "dispense": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 30.0
+          }
+        }
+      }
+    }
+  ]
+}
