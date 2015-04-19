@@ -2,7 +2,7 @@
 
 angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 
     'ngResource', 'ui.router', 'ui.bootstrap', 'angular-peity', 'datePicker', 
-    'isteven-multi-select', 'angularChart'])
+    'isteven-multi-select', 'angularChart', 'ui.sortable'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 

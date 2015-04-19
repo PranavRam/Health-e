@@ -31,4 +31,57 @@ angular.module('health-e')
             }
         };
 
+        $scope.todoList = [
+            {
+                content: 'Simply dummy text of the printing and typesetting industry.',
+                date: '12.10.2015',
+                statusClass: 'warning',
+                tagName: 'Mark'
+            },
+            {
+                content: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.',
+                date: '05.04.2015',
+                statusClass: 'success',
+                tagName: 'Tag'
+            },
+            {
+                content: 'Sometimes by accident, sometimes on purpose (injected humour and the like).',
+                date: '16.11.2015',
+                statusClass: 'info',
+                tagName: 'Mark'
+            },
+            {
+                content: 'All the Lorem Ipsum generators',
+                date: '06.10.2015',
+                statusClass: 'danger',
+                tagName: 'Tag'
+            },
+            {
+                content: 'Which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+                date: '09.12.2015',
+                statusClass: 'warning',
+                tagName: 'Mark'
+            },
+            {
+                content: 'Packages and web page editors now use Lorem Ipsum as',
+                date: '08.04.2015',
+                statusClass: 'warning',
+                tagName: 'Mark'
+            },
+            {
+                content: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.',
+                date: '05.04.2015',
+                statusClass: 'success',
+                tagName: 'Tag'
+            },
+            {
+                content: 'Sometimes by accident, sometimes on purpose (injected humour and the like).',
+                date: '16.11.2015',
+                statusClass: 'info',
+                tagName: 'Tag'
+            }
+        ];
+        $scope.sortableOptions = {
+            connectWith: ".connectList"
+        };
     });
