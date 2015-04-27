@@ -24,6 +24,7 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
             },
             controller: function($scope, observations, $timeout){
                 $scope.outputBrowsers = ['Type 1 Diabetes'];
+                $scope.selectedProvider = "";
                 function filterOutliers(someArray) {  
 
                     // Copy the values, rather than operating on references to existing values
@@ -200,6 +201,10 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
         .state('index.share', {
             url: "/share",
             templateUrl: "components/share/share_index.html"
+        })
+        .state('index.share_data', {
+            url: "/share-data",
+            templateUrl: "components/share/share_data.html"
         })
 
     $urlRouterProvider.otherwise('/index/main');

@@ -5,6 +5,14 @@ angular.module('health-e')
 		var data = [];
 		function getReadings(){
 			var dfd = $q.defer();
+			if(data.length > 0){
+				var temp = {
+					name: 'BMI',
+					data: data
+				}
+				dfd.resolve(temp);
+				return dfd.promise;
+			}
 			$http.get('https://api.humanapi.co/v1/human/bmi/readings?access_token=demo').then(function(resp){
 				data = resp.data
 				var temp = {

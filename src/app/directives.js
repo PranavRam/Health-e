@@ -36,6 +36,18 @@ function fullScroll($timeout){
     };
 }
 
+function ionRangeSlider() {
+    return {
+        restrict: 'A',
+        scope: {
+            rangeOptions: '='
+        },
+        link: function (scope, elem, attrs) {
+            elem.ionRangeSlider(scope.rangeOptions);
+        }
+    }
+}
+
 //Directive used to set metisMenu and minimalize button
 angular.module('health-e')
     .directive('sideNavigation', function ($timeout) {
@@ -75,6 +87,7 @@ angular.module('health-e')
         };
     })
     .directive('chatSlimScroll', chatSlimScroll)
-    .directive('fullScroll', fullScroll);
+    .directive('fullScroll', fullScroll)
+    .directive('ionRangeSlider', ionRangeSlider);
 
 

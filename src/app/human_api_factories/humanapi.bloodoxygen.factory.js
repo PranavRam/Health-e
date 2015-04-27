@@ -5,6 +5,14 @@ angular.module('health-e')
 		var data = [];
 		function getReadings(){
 			var dfd = $q.defer();
+			if(data.length > 0){
+				var temp = {
+					name: 'Blood Oxygen',
+					data: data
+				}
+				dfd.resolve(temp);
+				return dfd.promise;
+			}
 			$http.get('https://api.humanapi.co/v1/human/blood_oxygen/readings?access_token=demo').then(function(resp){
 				data = resp.data
 				var temp = {

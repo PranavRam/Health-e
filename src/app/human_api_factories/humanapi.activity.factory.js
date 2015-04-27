@@ -6,6 +6,10 @@ angular.module('health-e')
 		var activitySummaries = []
 		function getActivities(){
 			var dfd = $q.defer();
+			if(data.length > 0){
+				dfd.resolve(data);
+				return dfd.promise;
+			}
 			$http.get('https://api.humanapi.co/v1/human/activities?access_token=demo').then(function(resp){
 				data = resp.data
 				dfd.resolve(resp.data);
@@ -17,6 +21,10 @@ angular.module('health-e')
 
 		function getActivitySummaries(){
 			var dfd = $q.defer();
+			if(activitySummaries.length > 0){
+				dfd.resolve(activitySummaries);
+				return dfd.promise;
+			}
 			$http.get('https://api.humanapi.co/v1/human/activities/summaries?access_token=demo').then(function(resp){
 				activitySummaries = resp.data
 				dfd.resolve(resp.data);

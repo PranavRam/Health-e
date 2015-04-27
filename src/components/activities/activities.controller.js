@@ -59,7 +59,7 @@ function ActivityCtrl($scope, HumanAPIActivityFactory){
 		nested_data = _.map(nested_data, function(data){
 			var temp = {};
 			temp.key = data.key;
-			temp.type = 'pie';
+			temp.type = 'donut';
 			temp.name = _.capitalize(data.key);
 			activitiesOpts.push(temp);
 			data[data.key] = data.values;
@@ -75,7 +75,7 @@ function ActivityCtrl($scope, HumanAPIActivityFactory){
 	$scope.datasetActivities = [];
 
 	$scope.activitiesOptions = {
-		type: 'pie'
+		type: 'donut'
 	}
 	$scope.dataset = [];
 	$scope.schema = {

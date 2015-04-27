@@ -33,55 +33,74 @@ angular.module('health-e')
 
         $scope.todoList = [
             {
-                content: 'Simply dummy text of the printing and typesetting industry.',
+                content: 'Check your blood sugar levels since your last visit and review your target range.',
                 date: '12.10.2015',
                 statusClass: 'warning',
-                tagName: 'Mark'
+                tagName: 'assets/images/profile_small.jpg',
+                provider: 'doom'
             },
             {
-                content: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.',
+                content: 'The Pancreas and Blood Tests',
                 date: '05.04.2015',
                 statusClass: 'success',
-                tagName: 'Tag'
+                tagName: 'assets/images/a1.jpg',
+                provider: 'dolittle'
             },
             {
-                content: 'Sometimes by accident, sometimes on purpose (injected humour and the like).',
+                content: 'Check your blood pressure and start or adjust treatment, if needed. Nerve and blood vessel damage can result from high blood pressure, leading to heart problems and strokes.',
                 date: '16.11.2015',
                 statusClass: 'info',
-                tagName: 'Mark'
+                tagName: 'assets/images/profile_small.jpg',
+                provider: 'doom'
             },
             {
-                content: 'All the Lorem Ipsum generators',
+                content: 'Check your feet for signs of problems, especially if you have had diabetes for a few years. Nerve damage in your feet makes it hard to feel an injury or infection. Take off your socks each time you see the doctor to be sure you both remember to check your feet. ',
                 date: '06.10.2015',
                 statusClass: 'danger',
-                tagName: 'Tag'
+                tagName: 'assets/images/profile_small.jpg',
+                provider: 'doom'
             },
             {
-                content: 'Which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+                content: 'Secretin Stimulation Test',
                 date: '09.12.2015',
                 statusClass: 'warning',
-                tagName: 'Mark'
+                tagName: 'assets/images/a1.jpg',
+                provider: 'dolittle'
             },
             {
-                content: 'Packages and web page editors now use Lorem Ipsum as',
+                content: 'Have a hemoglobin A1c test. This blood test shows how steady your blood sugar levels have been over time.',
                 date: '08.04.2015',
                 statusClass: 'warning',
-                tagName: 'Mark'
+                tagName: 'assets/images/profile_small.jpg',
+                provider: 'doom'
             },
             {
-                content: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.',
+                content: 'Fecal Elastase Test',
                 date: '05.04.2015',
                 statusClass: 'success',
-                tagName: 'Tag'
+                tagName: 'assets/images/a1.jpg',
+                provider: 'dolittle'
             },
             {
-                content: 'Sometimes by accident, sometimes on purpose (injected humour and the like).',
+                content: 'Computed Tomography (CT) Scan With Contrast Dye',
                 date: '16.11.2015',
                 statusClass: 'info',
-                tagName: 'Tag'
+                tagName: 'assets/images/a1.jpg',
+                provider: 'dolittle'
             }
         ];
         $scope.sortableOptions = {
             connectWith: ".connectList"
         };
+
+
+        $scope.getOpacity = function(task){
+            if(!$scope.selectedProvider) return "show-full-opacity";
+            if($scope.selectedProvider === task.provider) return "show-full-opacity";
+            return "show-lower-opacity";
+        }
+
+        $scope.selectProvider = function(provider){
+            $scope.selectedProvider = provider;
+        }
     });
