@@ -3,6 +3,9 @@
 angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 
     'ngResource', 'ui.router', 'ui.bootstrap', 'angular-peity', 'datePicker', 
     'isteven-multi-select', 'angularChart', 'ui.sortable'])
+  .run(function ($state, $rootScope, $log) {
+     $rootScope.$state = $state;
+  })
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
@@ -19,7 +22,8 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
                     return ObservationsFactory.getObservations();
                 }
             },
-            controller: function($scope, observations){
+            controller: function($scope, observations, $timeout){
+                $scope.outputBrowsers = ['Type 1 Diabetes'];
                 function filterOutliers(someArray) {  
 
                     // Copy the values, rather than operating on references to existing values
@@ -82,6 +86,7 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
                   { name: 'Type 1 Diabetes',  ticked: true  },
                   { name: 'Chronic Renal Failure', ticked: false }
                 ];
+
                 $scope.toggleInputFor = function(observation){
                   observation.showInput = !observation.showInput;
                 }
@@ -93,12 +98,12 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
                 var temp = [];
                 _.forIn(observations, function(value, key) {
                     function getChartData(){
-                      return _.map(value, function(n){
+                      return _.compact(_.map(value, function(n){
                         // console.log(n.content);
                         if(typeof n.content.valueQuantity === 'undefined') 
                           return undefined;
                         return n.content.valueQuantity.value;
-                      })
+                      }));
                     }
 
                     var obj = {};
@@ -116,7 +121,6 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
                 });
                 // console.log(_.values(temp));
                 // $scope.observationChunks = _.chunk(temp, 2);
-                // console.log(temp);
                 $scope.observations = temp;
                 // $scope.observations = temp;
                 // console.log($scope.observationChunks);
@@ -127,6 +131,13 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
                         width: 100
                     }
                 };*/
+                $scope.fSelectNone = function(){
+                    $scope.outputBrowsers = []
+                }
+                $scope.shouldShowCard = function(observation){
+                    if(observation.chart.data.length === 0 && $scope.outputBrowsers.length > 0) return false;
+                    return true;
+                }
             }
         })
         .state('index.related', {
@@ -139,10 +150,7 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
             // parent: 'index.related',
             url: "/:type",
             templateUrl: "app/minor/forum_detail.html",
-            data: { pageTitle: 'Type 1 Diabetes' },
-            controller: function($rootScope, $state){
-                $rootScope.$state = $state;
-            }
+            data: { pageTitle: 'Type 1 Diabetes' }
         })
         .state('index.related.forums', {
             url: "",
@@ -169,9 +177,29 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
                 }
             }
         })
+        .state('index.journal', {
+            url: "/journal",
+            abstract: true,
+            templateUrl: "components/journal/journal_index.html"
+        })
+        .state('index.journal.all', {
+            url: "",
+            templateUrl: "components/journal/journal.html",
+            controller: function($rootScope, $state){
+                $rootScope.$state = $state;
+            }
+        })
+        .state('index.journal.entry', {
+            url: "/:article",
+            templateUrl: "components/journal/journal_entry.html"
+        })
         .state('index.chat', {
             url: "/chat",
             templateUrl: "app/chat/chat.html"
+        })
+        .state('index.share', {
+            url: "/share",
+            templateUrl: "components/share/share_index.html"
         })
 
     $urlRouterProvider.otherwise('/index/main');

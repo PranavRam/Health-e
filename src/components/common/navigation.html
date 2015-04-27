@@ -38,8 +38,8 @@
             <li ui-sref-active="active">
                 <a ui-sref="index.chat"><i class="fa fa-comments"></i> <span class="nav-label">Chat</span></a>
             </li>
-            <li ui-sref-active="active">
-                <a ui-sref="index.journal"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Journal</span></a>
+            <li ng-class="{active: $state.includes('index.journal')}">
+                <a ui-sref="index.journal.all"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Journal</span></a>
             </li>
             <li ui-sref-active="active">
                 <a ui-sref="index.share"><i class="fa fa-share"></i> <span class="nav-label">Share</span></a>

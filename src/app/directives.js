@@ -1,5 +1,41 @@
 'use strict';
 
+/**
+ * chatSlimScroll - Directive for slim scroll for small chat
+ */
+function chatSlimScroll($timeout) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            $timeout(function(){
+                element.slimscroll({
+                    height: '234px',
+                    railOpacity: 0.4
+                });
+
+            });
+        }
+    };
+}
+
+/**
+ * fullScroll - Directive for slimScroll with 100%
+ */
+function fullScroll($timeout){
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            $timeout(function(){
+                element.slimscroll({
+                    height: '100%',
+                    railOpacity: 0.9
+                });
+
+            });
+        }
+    };
+}
+
 //Directive used to set metisMenu and minimalize button
 angular.module('health-e')
     .directive('sideNavigation', function ($timeout) {
@@ -37,6 +73,8 @@ angular.module('health-e')
                 };
             }
         };
-    });
+    })
+    .directive('chatSlimScroll', chatSlimScroll)
+    .directive('fullScroll', fullScroll);
 
 

@@ -3,6 +3,7 @@
         <!-- <span><h2>Welcome Pranav</h2> How are you feeling today?</span> -->
         <h3>Welcome, Pranav</h3>
         <div
+            on-select-none="fSelectNone()"
             isteven-multi-select
             input-model="modernBrowsers"
             output-model="outputBrowsers"
@@ -18,11 +19,18 @@
     <div class="wrapper-content">
         <div class="col-md-8">
             <div class="row">
-                <div class="col-md-6" ng-repeat="reading in humanAPIReadings">
+                <div class="col-md-6 observation-card" ng-repeat="reading in humanAPIReadings">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>{{reading.title}}</h5>
                             <div ibox-tools></div>
+                        </div>
+                        <div class="ibox-providers">
+                            <div class="profile-xs">
+                                <img alt="image" class="img-circle" tooltip-placement="left" tooltip="Dr Doom" src="assets/images/profile_small.jpg">
+                                <img alt="image" class="img-circle" tooltip-placement="top" tooltip="Dr Oc" src="assets/images/a2.jpg">
+                                <img alt="image" class="img-circle" tooltip-placement="right" tooltip="Dr Dolittle" src="assets/images/a1.jpg">
+                            </div>
                         </div>
                         <div class="ibox-content">
                             <div>
@@ -43,7 +51,7 @@
 
             <!-- </div> -->
             <!-- <div class="row" ng-repeat="observationChunk in observationChunks"> -->
-                <div class="col-md-6 observation-card" ng-repeat="observation in observations">
+                <div class="col-md-6 observation-card" ng-if="shouldShowCard(observation)" ng-repeat="observation in observations">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>{{observation.title}}</h5> <!-- <span class="label label-primary">W</span> -->
@@ -53,11 +61,18 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="ibox-providers">
+                            <div class="profile-xs">
+                                <img alt="image" class="img-circle" tooltip-placement="left" tooltip="Dr Doom" src="assets/images/profile_small.jpg">
+                                <img alt="image" class="img-circle" tooltip-placement="top" tooltip="Dr Oc" src="assets/images/a2.jpg">
+                                <img alt="image" class="img-circle" tooltip-placement="right" tooltip="Dr Dolittle" src="assets/images/a1.jpg">
+                            </div>
+                        </div>
                         <div class="ibox-content">
                             <div>
 
                                 <div class="pull-right text-right">
-                                    <bar-chart data="observation.chart.data" options="observation.chart.options"></bar-chart>
+                                    <bar-chart ng-if="observation.chart.data.length > 0"data="observation.chart.data" options="observation.chart.options"></bar-chart>
                                     <br/>
                                     <small class="font-bold">{{observation.values[0].content.valueQuantity.value}} {{observation.values[0].content.valueQuantity.units}}</small>
                                 </div>
