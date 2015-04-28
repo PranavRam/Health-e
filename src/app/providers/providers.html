@@ -1,19 +1,19 @@
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-9">
+    <div class="col-sm-9">
         <h2>Care Providers</h2>
         <ol class="breadcrumb">
             <li>
                 <a href="index.html">Home</a>
             </li>
             <li class="active">
-                <strong>Care Providers (PCPs)</strong>
+                <strong>Care Providers</strong>
             </li>
         </ol>
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
 <div class="row">
-<div class="col-lg-4">
+<div class="col-sm-4">
     <div class="contact-box">
         <a ui-sref="profile">
             <div class="col-sm-4">
@@ -38,7 +38,7 @@
         </a>
     </div>
 </div>
-<div class="col-lg-4">
+<div class="col-sm-4">
     <div class="contact-box">
         <a ui-sref="profile">
             <div class="col-sm-4">
@@ -63,7 +63,7 @@
         </a>
     </div>
 </div>
-<div class="col-lg-4">
+<div class="col-sm-4">
     <div class="contact-box">
         <a ui-sref="profile">
             <div class="col-sm-4">
@@ -88,7 +88,7 @@
         </a>
     </div>
 </div>
-<div class="col-lg-4">
+<div class="col-sm-4">
     <div class="contact-box">
         <a href="http://www.healthgrades.com/physician/dr-kate-wheeler-x4cj5" target="_blank">
             <div class="col-sm-4">
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <h3><strong>Dr. Kate S. Wheeler, MD</strong></h3>
+                <h3><strong>Dr. Kate S. Wheeler, sm</strong></h3>
 
                 <p><i class="fa fa-map-marker"></i> Laureate Medical Group</p>
                 <address>
@@ -112,7 +112,7 @@
         </a>
     </div>
 </div>
-<div class="col-lg-4">
+<div class="col-sm-4">
     <div class="contact-box">
         <a ui-sref="profile">
             <div class="col-sm-4">
@@ -137,7 +137,7 @@
         </a>
     </div>
 </div>
-<div class="col-lg-4">
+<div class="col-sm-4">
     <div class="contact-box">
         <a ui-sref="profile">
             <div class="col-sm-4">
@@ -162,4 +162,51 @@
         </a>
     </div>
 </div>
+</div>
+<div class="row" ng-controller="ProvidersCtrl">
+    <div class="col-sm-8 col-sm-offset-2">
+              <h2 class="text-center">{{ calendarControl.getTitle() }}</h2>
+
+              <div class="row">
+
+                <div class="col-sm-6 text-center">
+                  <div class="btn-group">
+
+                    <button class="btn btn-primary" ng-click="calendarControl.prev()">Previous</button>
+                    <button class="btn btn-default" ng-click="setCalendarToToday()">Today</button>
+                    <button class="btn btn-primary" ng-click="calendarControl.next()">Next</button>
+                  </div>
+                </div>
+
+                <br class="visible-xs visible-sm">
+
+                <div class="col-sm-6 text-center">
+                  <div class="btn-group">
+                    <label class="btn btn-primary" ng-model="calendarView" btn-radio="'year'">Year</label>
+                    <label class="btn btn-primary" ng-model="calendarView" btn-radio="'month'">Month</label>
+                    <label class="btn btn-primary" ng-model="calendarView" btn-radio="'week'">Week</label>
+                    <label class="btn btn-primary" ng-model="calendarView" btn-radio="'day'">Day</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <br>
+    <mwl-calendar
+        calendar-events="events"
+        calendar-view="calendarView"
+        calendar-current-day="calendarDay"
+        calendar-control="calendarControl"
+        calendar-event-click="eventClicked(calendarEvent)"
+        calendar-edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+        calendar-delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+        calendar-edit-event-click="eventEdited(calendarEvent)"
+        calendar-delete-event-click="eventDeleted(calendarEvent)"
+        calendar-auto-open="true"
+        calendar-day-view-start="06:00"
+        calendar-day-view-end="22:00"
+        calendar-timespan-click="dayClicked($date)"
+        calendar-day-view-split="30"
+    ></mwl-calendar>
+    <br>
 </div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 
-    'ngResource', 'ui.router', 'ui.bootstrap', 'angular-peity', 'datePicker', 
+    'ngResource', 'ui.router', 'mwl.calendar', 'ui.bootstrap', 'summernote', 'angular-peity', 'datePicker', 
     'isteven-multi-select', 'angularChart', 'ui.sortable'])
   .run(function ($state, $rootScope, $log) {
      $rootScope.$state = $state;
@@ -22,7 +22,62 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
                     return ObservationsFactory.getObservations();
                 }
             },
-            controller: function($scope, observations, $timeout){
+            controller: function($scope, observations, $modal){
+                function ModalInstanceCtrl ($scope, $modalInstance, data) {
+                    console.log(data)
+                    $scope.title = data.title;
+                    $scope.ok = function () {
+                        $modalInstance.close();
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+
+                    $scope.dataset = data.originalData;
+                    $scope.schema = {
+                      createdAt: {
+                        type: 'datetime',
+                        format: '%Y-%m-%dT%H:%M:%S.%LZ',
+                        name: 'Date'
+                      }
+                    };
+                    $scope.options = {
+                      rows: [{
+                        key: 'value',
+                        name: 'Value',
+                        type: 'bar'
+                      }],
+                      xAxis: {
+                        key: 'createdAt',
+                        displayFormat: '%Y-%m-%d'
+                      },
+                      "subchart": {
+                      "selector": true,
+                      "show": true
+                        },
+                        "zoom": {
+                          "range": [
+                            1.1,
+                            3.9
+                          ]
+                        }
+                    };
+
+                };
+                $scope.open3 = function (size, observation) {
+                    var modalInstance = $modal.open({
+                        templateUrl: 'components/modals/modal_example3.html',
+                        size: size,
+                        controller: ModalInstanceCtrl,
+                        resolve: {
+                          data: function () {
+                            return observation;
+                          }
+                        }
+                    });
+                };
                 $scope.outputBrowsers = ['Type 1 Diabetes'];
                 $scope.selectedProvider = "";
                 function filterOutliers(someArray) {  
@@ -66,6 +121,7 @@ angular.module('health-e', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
                         }())),
                         unit: readings.data[0].unit,
                         latest: readings.data[0].updatedAt,
+                        originalData: readings.data,
                         options: {
                             fill: ["#1ab394", "#d7d7d7"],
                             width: 100

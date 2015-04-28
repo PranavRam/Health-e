@@ -9,7 +9,7 @@ function ActivityCtrl($scope, HumanAPIActivityFactory){
 
 	HumanAPIActivityFactory.getActivitySummaries().then(function(data){
 		$scope.activitySummaries = data;
-		console.log(data);
+		// console.log(data);
 	});
 
 	$scope.optionsSummaries = {

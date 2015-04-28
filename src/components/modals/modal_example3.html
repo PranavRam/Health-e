@@ -1,0 +1,18 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h4 class="modal-title">{{title}}</h4>
+    </div>
+    <div class="modal-body">
+        <angularchart
+            dataset="dataset"
+            schema="schema"
+            options="options">
+          </angularchart>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-white" ng-click="cancel()">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="ok()">Save changes</button>
+    </div>
+
+</div>
+

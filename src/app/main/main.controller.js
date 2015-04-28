@@ -93,7 +93,6 @@ angular.module('health-e')
             connectWith: ".connectList"
         };
 
-
         $scope.getOpacity = function(task){
             if(!$scope.selectedProvider) return "show-full-opacity";
             if($scope.selectedProvider === task.provider) return "show-full-opacity";
